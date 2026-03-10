@@ -10,10 +10,6 @@ const app = Fastify({
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
 
-app.get('/', async function handler() {
-  return { hello: 'world' }
-})
-
 app.withTypeProvider<ZodTypeProvider>().route({
   method: 'GET',
   url: '/',
